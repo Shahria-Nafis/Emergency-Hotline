@@ -8,7 +8,7 @@ const sidberContainer = getElement("sidebarCartContainer");
 
 //cardMethod heart-call-callHistory-copyBtn #multiple task inside in one method=========================
 getElement("card-container").addEventListener("click", function (e) {
-  //heart click and heat increment
+  //heart click and heat encrement
   if (e.target.className.includes("fa-heart")) {
     const heartCountDisply = getElement("heartCountDisplay");
     const heartCountDisplyconvert = parseInt(heartCountDisply.innerText);
@@ -37,3 +37,48 @@ getElement("card-container").addEventListener("click", function (e) {
       alert(
         `${cardTitle} \n 📞 calling ${contactCategory} ${contactNumber}...`
       );
+      //coin decremt
+      let coinDecrementRes = coinNumber - 20;
+      coin.innerText = coinDecrementRes;
+
+      const newSidberCard = document.createElement("div");
+      newSidberCard.innerHTML = `
+          <div
+            class="flex justify-between p-1 md:p-3 bg-slate-200 rounded-md mt-2 gap-2"
+          >
+            <div class="">
+              <h1 class="text-[10px] md:text-sm">${cardTitle}</h1>
+              <p class="text-gray-400 text-[10px] md:text-sm">${contactNumber}</p>
+            </div>
+            <div class="text-[10px] md:text-sm">${hours}:${minutes}:${seconds} ${ampm}</div>
+          </div>`;
+      sidberContainer.appendChild(newSidberCard);
+    } else {
+      alert(
+        "❌You don't have enough coins! You need at least 20 coins to make a call."
+      );
+    }
+  }
+
+  //copy button
+  if (e.target.className.includes("copyBtn")) {
+    const copyCounterDisply = getElement("copyCounterDisplay");
+    const copyResConvertNum = parseInt(copyCounterDisply.innerText);
+    copyCounterDisply.innerText = copyResConvertNum + 1;
+    const cardInnerItems = e.target;
+    const cardTitle =
+      cardInnerItems.parentNode.parentNode.children[1].innerText;
+    const contactNumber =
+      cardInnerItems.parentNode.parentNode.children[3].innerText;
+    alert(` ${cardTitle} \n Number copied: ${contactNumber}`);
+
+    //copy number
+    navigator.clipboard.writeText(contactNumber);
+  }
+});
+
+//clearMethod button============================================
+const clearBtn = getElement("clearBtn");
+clearBtn.addEventListener("click", function () {
+  sidberContainer.innerHTML = "";
+});
