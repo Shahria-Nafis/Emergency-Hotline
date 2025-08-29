@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-emerald-50">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-emerald-50">
+    <!--nav-->
+    <nav>
+      <div
+        class="navParentDiv bg-white flex justify-between px-3 md:px-[60px] py-[25px]"
+      >
+        <!--nav Left-->
+        <div class="navLeft flex items-center gap-2">
+          <img
+            class="h-[30px] md:h-[50px]"
+            src="./assets/logo.png"
+            alt="logo"
+          />
+          <div>
+            <h1 class="text-sm md:text-xl font-extrabold text-green-700">
+              Emergency <br />
+              Service
+            </h1>
+          </div>
+        </div>
+        <!--nav right-->
+        <div class="flex gap-3">
+          <!--heart btn-->
+          <div
+            class="flex justify-center items-center px-1 md:px-6 rounded-full gap-2 bg-green-50"
+          >
+            <div id="heartCountDisplay">0</div>
+            <img class="h-[23px]" src="./assets/heart.png" alt="" />
+          </div>
+
+          <!--coin btn-->
+          <div
+            class="flex justify-center items-center px-3 rounded-full gap-2 bg-green-50"
+          >
+            <div id="coinDisplay">100</div>
+            <img class="h-[23px]" src="./assets/coin.png" alt="" />
+          </div>
+          <!--copy btn-->
+          <button
+            class="bg-green-600 px-2 md:px-7 rounded-full text-white flex items-center gap-1"
+          >
+            <span id="copyCounterDisplay">0</span>
+            <span>Copy</span>
+          </button>
+        </div>
+      </div>
+    </nav>
